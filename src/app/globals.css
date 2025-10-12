@@ -3,13 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Your custom colors */
+  --color-primary-white: #ffffff;
+  --color-secondary-dark: #ffb901;
+  --color-secondary-light: #fff4d8;
+  --color-font-gray: #262622;
+  --color-font-white: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Your custom colors */
+  --color-primary-white: var(--color-primary-white);
+  --color-secondary-dark: var(--color-secondary-dark);
+  --color-secondary-light: var(--color-secondary-light);
+  --color-font-gray: var(--color-font-gray);
+  --color-font-white: var(--color-font-white);
 }
 
 @media (prefers-color-scheme: dark) {
