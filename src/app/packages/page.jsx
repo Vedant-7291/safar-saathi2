@@ -119,7 +119,7 @@ export default function Packages() {
             alt="Packages Banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0"></div>
         </div>
         
         <div className="relative z-10 h-full flex items-center justify-center pt-20">
@@ -147,15 +147,15 @@ export default function Packages() {
             </p>
           </div>
 
-          {/* Packages Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {/* Packages Grid - 2x2 for small devices */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {packages.map((pkg) => (
               <div 
                 key={pkg.id}
                 className="bg-white rounded-2xl border-2 border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
-                {/* Package Image */}
-                <div className="w-full h-48">
+                {/* Package Image - Fixed display */}
+                <div className="w-full h-32 md:h-40 bg-white px-2 pt-2">
                   <img 
                     src={pkg.image} 
                     alt={pkg.title}
@@ -164,58 +164,62 @@ export default function Packages() {
                 </div>
 
                 {/* Package Content */}
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                   {/* Package Title and Dropdown Button */}
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex justify-between items-start mb-3">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 text-left">{pkg.title}</h3>
-                      <p className="text-gray-500 text-sm mt-1 text-left">{pkg.description}</p>
+                      <h3 className="text-base md:text-lg font-bold text-gray-900 text-left">{pkg.title}</h3>
+                      <p className="text-gray-500 text-xs md:text-sm mt-1 text-left">{pkg.description}</p>
                     </div>
                     <button
                       onClick={() => togglePackage(pkg.id)}
-                      className="ml-4 p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                      className="ml-2 p-1 md:p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200 flex-shrink-0"
                     >
                       {expandedPackage === pkg.id ? (
-                        <ChevronUp className="w-5 h-5" />
+                        <ChevronUp className="w-4 h-4 md:w-5 md:h-5" />
                       ) : (
-                        <ChevronDown className="w-5 h-5" />
+                        <ChevronDown className="w-4 h-4 md:w-5 md:h-5" />
                       )}
                     </button>
                   </div>
 
                   {/* Price */}
-                  <div className="flex justify-between items-center mb-6">
+                  <div className="flex justify-between items-center mb-4">
                     <div className="text-left">
-                      <p className="text-lg font-semibold text-gray-700">Price</p>
+                      <p className="text-sm md:text-base font-semibold text-gray-700">Price</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-lg font-bold text-yellow-600">{pkg.price}</p>
+                      <p className="text-sm md:text-base font-bold text-yellow-600">{pkg.price}</p>
                     </div>
                   </div>
 
-                  {/* Expanded Details */}
+                  {/* Expanded Details - Only show when this card is expanded */}
                   {expandedPackage === pkg.id && (
-                    <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                      <p className="text-gray-700 text-sm mb-3">{pkg.details.para}</p>
-                      <ul className="space-y-2">
-                        {pkg.details.bulletPoints.map((point, index) => (
-                          <li key={index} className="flex items-start text-sm text-gray-600">
-                            <span className="text-yellow-500 mr-2">•</span>
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="overflow-hidden animate-slideDown">
+                      <div className="mt-3 p-3 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <p className="text-gray-700 text-xs md:text-sm mb-3">{pkg.details.para}</p>
+                        <ul className="space-y-1 md:space-y-2">
+                          {pkg.details.bulletPoints.map((point, index) => (
+                            <li key={index} className="flex items-start text-xs md:text-sm text-gray-600">
+                              <span className="text-yellow-500 mr-2">•</span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   )}
 
-                  {/* Action Buttons */}
-                  <div className={`flex flex-col sm:flex-row gap-3 ${expandedPackage === pkg.id ? 'mt-4' : ''}`}>
-                    <button className="flex-1 bg-black text-white hover:bg-gray-800 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
-                      Book Now
-                    </button>
-                    <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
-                      Call Now
-                    </button>
+                  {/* Action Buttons - Fixed position, no movement */}
+                  <div className="mt-4">
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <button className="flex-1 bg-black text-white hover:bg-gray-800 py-2 md:py-3 rounded-lg font-semibold transition-all duration-200 text-xs md:text-sm">
+                        Book Now
+                      </button>
+                      <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-2 md:py-3 rounded-lg font-semibold transition-all duration-200 text-xs md:text-sm">
+                        Call Now
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -230,6 +234,23 @@ export default function Packages() {
           </div>
         </div>
       </section>
+
+      {/* Add custom animation */}
+      <style jsx>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+      `}</style>
     </div>
   )
 }

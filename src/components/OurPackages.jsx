@@ -78,10 +78,10 @@ export default function OurPackages() {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <button className="flex-1 bg-secondary-dark text-primary-white hover:bg-secondary-light py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <button className="flex-1 bg-secondary-dark text-black hover:bg-yellow-500 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                     Book Now
                   </button>
-                  <button className="flex-1 bg-black text-primary-white hover:bg-gray-800 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <button className="flex-1 bg-black text-primary-white hover:bg-gray-800 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                     Call Now
                   </button>
                 </div>
@@ -92,7 +92,7 @@ export default function OurPackages() {
 
         {/* View More CTA Button */}
         <div className="text-center mt-12">
-          <button className="bg-secondary-dark text-primary-white hover:bg-secondary-light px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <button className="bg-secondary-dark text-black hover:bg-yellow-500 px-6 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
             View More
           </button>
         </div>

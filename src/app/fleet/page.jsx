@@ -141,45 +141,45 @@ export default function OurVehicles() {
             </div>
           </div>
 
-          {/* Vehicles Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {/* Vehicles Grid - 2x2 on ALL devices including mobile */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {filteredVehicles.map((vehicle) => (
               <div 
                 key={vehicle.id}
                 className="bg-white rounded-2xl border-2 border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
               >
-                {/* Vehicle Image - Full width and height without padding/margins */}
-                <div className="w-full h-64 p-x-2">
+                {/* Vehicle Image */}
+                <div className="w-full h-40 px-2 pt-2">
                   <img 
                     src={vehicle.image} 
                     alt={vehicle.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain md:object-cover lg:object-cover rounded-t-lg"
                   />
                 </div>
 
-                {/* Vehicle Name - Below Image */}
-                <div className="text-center py-4 border-b border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900">{vehicle.name}</h3>
-                  <span className="text-sm text-gray-500 capitalize mt-1">{vehicle.type}</span>
+                {/* Vehicle Name */}
+                <div className="text-center py-3 border-b border-gray-200">
+                  <h3 className="text-base font-bold text-gray-900">{vehicle.name}</h3>
+                  <span className="text-xs text-gray-500 capitalize">{vehicle.type}</span>
                 </div>
 
-                {/* Rate and Price */}
-                <div className="p-6">
-                  <div className="space-y-3 mb-6">
-                    <div className="text-center">
-                      <p className="text-lg font-semibold text-gray-700">{vehicle.ratePerKm}</p>
+                {/* Rate and Price - SAME LINE, left and right aligned */}
+                <div className="p-4">
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="text-left">
+                      <p className="text-sm font-semibold text-gray-700">{vehicle.ratePerKm}</p>
                     </div>
-                    <div className="text-center">
-                      <p className="text-lg font-bold text-yellow-600">{vehicle.price}</p>
+                    <div className="text-right">
+                      <p className="text-sm font-bold text-yellow-600">{vehicle.price}</p>
                     </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <button className="flex-1 bg-black text-white hover:bg-gray-800 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <div className="flex gap-2">
+                    <button className="flex-1 bg-black text-white hover:bg-gray-800 py-2 rounded-lg font-semibold transition-all duration-200 text-sm">
                       Book Now
                     </button>
-                    <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                    <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-2 rounded-lg font-semibold transition-all duration-200 text-sm">
                       Call Now
                     </button>
                   </div>

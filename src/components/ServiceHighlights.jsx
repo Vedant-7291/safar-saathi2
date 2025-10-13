@@ -59,10 +59,10 @@ export default function ServiceHighlights() {
 
                   {/* CTA Buttons - Responsive sizing */}
                   <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-4">
-                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center">
+                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-5 md:py-2 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center">
                       Book a Trip
                     </button>
-                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center">
+                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-5 md:py-2 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center">
                       Via WhatsApp
                     </button>
                   </div>

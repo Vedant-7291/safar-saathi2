@@ -52,7 +52,7 @@ export default function Journey() {
   ]
 
   return (
-    <section className="relative z-40 -mt-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative z-40 -mt-40 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
@@ -67,14 +67,14 @@ export default function Journey() {
                 >
                   {/* Image Container Only */}
                   <div className="flex flex-col items-center justify-center">
-                    <div className="w-30 h-30 bg-primary-white rounded-full flex items-center justify-center">
+                    <div className="w-40 h-40 bg-primary-white rounded-full flex items-center justify-center">
                       {/* Fallback if image doesn't load */}
                       
                       {/* Uncomment when you have actual images */}
                       <img 
                         src={step.image} 
                         alt={step.title}
-                        className="w-30 h-30 object-cover"
+                        className="w-40 h-40 object-cover"
                       />
                     </div>
                  
@@ -93,7 +93,7 @@ export default function Journey() {
                 Experience seamless travel planning with our easy-to-use booking system. 
                 Get the best rates for your journey with complete transparency and no hidden charges.
               </p>
-              <button className="bg-secondary-dark text-font-gray hover:bg-primary-white hover:text-font-gray px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button className="bg-secondary-dark text-font-gray hover:bg-yellow-600 hover:text-font-gray px-5 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
                 Book a Trip
               </button>
             </div>
@@ -252,7 +252,7 @@ export default function Journey() {
                 <div className="mt-auto pt-4">
                   <button
                     type="submit"
-                    className="w-full bg-secondary-dark text-font-gray hover:bg-secondary-light py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+                    className="w-full bg-secondary-dark text-font-gray hover:bg-yellow-600 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
                   >
                     Book Now
                   </button>

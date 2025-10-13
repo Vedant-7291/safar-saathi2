@@ -55,7 +55,11 @@ export default function ContactUs() {
           <div>
             {/* Header Section */}
             <div className="mb-12">
-              <h3 className="text-lg font-semibold text-secondary-dark mb-2">Contact Us</h3>
+               <div className="mb-4">
+            <span className="inline-block px-4 py-2 bg-yellow-400 text-font-gray font-semibold rounded-lg">
+              Contact Us
+            </span>
+          </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-font-gray mb-4">
                 Get in Touch with Safar Saathi
               </h2>
@@ -70,7 +74,7 @@ export default function ContactUs() {
               {contactDetails.map((contact, index) => (
                 <div 
                   key={index}
-                  className="bg-primary-white rounded-xl p-6 shadow-lg border border-gray-200"
+                  className="bg-primary-white rounded-xl p-6 shadow-lg border border-gray-200 text-center flex flex-col items-center"
                 >
                   {/* Contact Icon */}
                   <div className="w-12 h-12 bg-secondary-dark rounded-full flex items-center justify-center mb-4">
@@ -88,9 +92,11 @@ export default function ContactUs() {
                   
                   {/* Contact Details */}
                   <h4 className="text-lg font-bold text-font-gray mb-2">{contact.title}</h4>
-                  {contact.details.map((detail, idx) => (
-                    <p key={idx} className="text-font-gray text-sm mb-1">{detail}</p>
-                  ))}
+                  <div className="space-y-1">
+                    {contact.details.map((detail, idx) => (
+                      <p key={idx} className="text-font-gray text-sm">{detail}</p>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -168,7 +174,7 @@ export default function ContactUs() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-secondary-dark text-primary-white hover:bg-secondary-light py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105"
+                className="w-full bg-secondary-dark text-black hover:bg-yellow-500 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform "
               >
                 Submit Message
               </button>

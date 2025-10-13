@@ -122,20 +122,13 @@ export default function Navbar() {
               <p className="text-2xl md:text-3xl lg:text-4xl mb-8 drop-shadow-2xl font-light">
                 Your Reliable Travel Partner
               </p>
-              <button className="bg-secondary-dark text-black px-10 py-4 rounded-lg font-semibold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl">
+              <button className="bg-secondary-dark text-black px-5 py-2 rounded-lg font-semibold text-xl transition-all duration-300 transform shadow-2xl hover:shadow-3xl">
                 Explore Our Services
               </button>
             </div>
           </div>
 
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <div className="animate-bounce">
-              <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       )}
 
@@ -145,8 +138,8 @@ export default function Navbar() {
       } ${bgClass}`}>
         <div className="w-full mx-auto px-0">
           <div className="flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8">
-            {/* Logo */}
-            <div className="flex items-center">
+            {/* Logo - Using flex-grow with max-width to control positioning */}
+            <div className="flex items-center flex-grow-0 flex-shrink-0 max-w-[200px] lg:max-w-[250px] ml-15">
               <Link href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
                   shouldBeTransparent && !scrolled ? 'bg-white/20 backdrop-blur-sm' : 'bg-secondary-dark'
@@ -161,8 +154,8 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            {/* Desktop Navigation - Centered with auto margins */}
+            <div className="hidden lg:flex items-center space-x-8 mx-auto">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -176,14 +169,14 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Desktop CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
+            {/* Desktop CTA Buttons - Using flex-grow with max-width to control positioning */}
+            <div className="hidden lg:flex items-center justify-end flex-grow-0 flex-shrink-0 max-w-[200px] lg:max-w-[250px] mr-15">
               <Link
                 href="/register"
                 className={`px-6 py-3 rounded-lg transition-colors duration-200 font-medium shadow-lg ${
                   shouldBeTransparent && !scrolled
                     ? 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                    : 'bg-secondary-dark text-white hover:bg-yellow-600'
                 }`}
               >
                 Book Now
@@ -218,13 +211,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-2 border-t border-gray-200">
-                <Link
-                  href="/login"
-                  className={`${mobileTextClass} hover:bg-blue-50 hover:text-yellow-500 block px-3 py-2 rounded-md text-base font-medium transition-colors`}
-                  onClick={handleLinkClick}
-                >
-                  Sign In
-                </Link>
+                
                 <Link
                   href="/register"
                   className="bg-secondary-dark text-black block px-3 py-2 rounded-md text-base font-medium mt-2 text-center transition-colors"

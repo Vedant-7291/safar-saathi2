@@ -10,7 +10,7 @@ export default function OurVehicles() {
       name: 'Economy Sedan',
       type: 'prime',
       image: '/assets/home/vehicle.webp',
-      ratePerKm: '09/-',
+      ratePerKm: '09/-km',
       price: '₹9807/-'
     },
     {
@@ -18,7 +18,7 @@ export default function OurVehicles() {
       name: 'Premium SUV',
       type: 'exclusive',
       image: '/assets/home/vehicle.webp',
-      ratePerKm: '12/-',
+      ratePerKm: '12/-km',
       price: '₹12,500/-'
     },
     {
@@ -26,7 +26,7 @@ export default function OurVehicles() {
       name: 'Luxury Car',
       type: 'exclusive',
       image: '/assets/home/vehicle.webp',
-      ratePerKm: '15/-',
+      ratePerKm: '15/-km',
       price: '₹15,200/-'
     }
   ]
@@ -106,10 +106,10 @@ export default function OurVehicles() {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <button className="flex-1 bg-secondary-dark text-primary-white hover:bg-secondary-light py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <button className="flex-1 bg-secondary-dark text-black hover:bg-yellow-500 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                     Book Now
                   </button>
-                  <button className="flex-1 bg-black text-primary-white hover:bg-gray-800 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <button className="flex-1 bg-black text-primary-white hover:bg-gray-800 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                     Call Now
                   </button>
                 </div>

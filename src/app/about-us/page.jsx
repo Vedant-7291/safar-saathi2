@@ -405,24 +405,24 @@ export default function AboutUs() {
   <div className="max-w-7xl mx-auto">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
       {/* Left Column - Centered with proper padding */}
-      <div className="space-y-8 text-center p-6 lg:p-8 bg-pink-50 rounded-2xl"> {/* Added padding and rounded corners */}
+      <div className="space-y-8 text-center p-6 lg:p-8 bg-[#fff4d8] rounded-2xl"> {/* Added padding and rounded corners */}
         {/* First Row */}
         <div className="p-4"> {/* Added inner padding */}
           <h3 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
             10+ Years
           </h3>
-          <p className="text-xl text-gray-600">Of Excellence in Service</p>
+          <p className="text-xl text-gray-600 font-bold">Of Excellence in Service</p>
         </div>
 
         {/* Second Row - Two Columns */}
         <div className="grid grid-cols-2 gap-4 lg:gap-6 p-4"> {/* Added padding */}
           <div className="text-center p-3"> {/* Added padding */}
-            <h4 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">50+</h4>
-            <p className="text-gray-600 text-lg">Cities Covered</p>
+            <h4 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">50+</h4>
+            <p className="text-gray-600 text-lg font-bold">Cities Covered</p>
           </div>
           <div className="text-center p-3"> {/* Added padding */}
-            <h4 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">657</h4>
-            <p className="text-gray-600 text-lg">Total Cars</p>
+            <h4 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">657</h4>
+            <p className="text-gray-600 text-lg font-bold">Total Cars</p>
           </div>
         </div>
       </div>
