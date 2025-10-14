@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const isHome = pathname === '/'
   // Add routes that should have transparent navbar with banner background
-  const isBannerPage = ['/about-us', '/pricing', '/fleet', '/packages', '/contact'].includes(pathname)
+  const isBannerPage = ['/about-us', '/pricing', '/fleet', '/packages', '/contact','/book-taxi'].includes(pathname)
 
   useEffect(() => {
     // Only handle scroll effects on home page or banner pages
@@ -172,7 +172,7 @@ export default function Navbar() {
             {/* Desktop CTA Buttons - Using flex-grow with max-width to control positioning */}
             <div className="hidden lg:flex items-center justify-end flex-grow-0 flex-shrink-0 max-w-[200px] lg:max-w-[250px] mr-15">
               <Link
-                href="/register"
+                href="/book-taxi"
                 className={`px-6 py-3 rounded-lg transition-colors duration-200 font-medium shadow-lg ${
                   shouldBeTransparent && !scrolled
                     ? 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
@@ -213,7 +213,7 @@ export default function Navbar() {
               <div className="pt-2 border-t border-gray-200">
                 
                 <Link
-                  href="/register"
+                  href="/book-taxi"
                   className="bg-secondary-dark text-black block px-3 py-2 rounded-md text-base font-medium mt-2 text-center transition-colors"
                   onClick={handleLinkClick}
                 >

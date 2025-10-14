@@ -17,6 +17,19 @@ export default function AboutUs() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const testimonialRef = useRef(null)
 
+const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+  
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+  
+  return () => window.removeEventListener('resize', checkMobile);
+}, []);
+
  const testimonials = [
   {
     id: 1,
@@ -170,13 +183,13 @@ export default function AboutUs() {
             alt="About Us Banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0"></div>
         </div>
         
         <div className="relative z-10 h-full flex items-center justify-center pt-20">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">About Us</h1>
-            <p className="text-xl md:text-2xl max-w-2xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 -translate-y-14">About Us</h1>
+            <p className="text-xl md:text-2xl max-w-2xl mx-auto -translate-y-14">
               Your trusted travel partner with years of excellence in transportation services
             </p>
           </div>
@@ -315,21 +328,21 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-{/* Testimonials Section - Perfect Continuous Loop */}
+{/* Testimonials Section - Responsive (1 card on mobile, 3 cards on desktop) */}
 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary-dark">
   <div className="max-w-7xl mx-auto">
     <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
       What Our Customers Say
     </h2>
     
-    {/* Container with exact 3 card width */}
+    {/* Container with responsive width */}
     <div className="w-full overflow-hidden">
       <div className="flex justify-center">
-        <div className="w-full max-w-[1200px] overflow-hidden"> {/* Fixed max width */}
+        <div className="w-full max-w-[1200px] overflow-hidden">
           <motion.div
             className="flex"
             animate={{
-              x: `-${currentTestimonial * 33.333}%`, // Move by exactly one card width
+              x: `-${currentTestimonial * (isMobile ? 100 : 33.333)}%`,
             }}
             transition={{
               type: "tween",
@@ -338,12 +351,12 @@ export default function AboutUs() {
             }}
           >
             {/* Create enough duplicates for seamless continuous scrolling */}
-            {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
+            {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className="flex-shrink-0 w-1/3 px-3" // Exactly 33.333% width
+                className={`flex-shrink-0 ${isMobile ? 'w-full px-4' : 'w-1/3 px-3'}`}
               >
-                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg h-full">
+                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg h-full mx-auto max-w-md md:max-w-none">
                   <div className="text-center">
                     <div className="w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl md:text-2xl font-bold">
                       {testimonial.name.charAt(0)}
@@ -383,14 +396,14 @@ export default function AboutUs() {
       </div>
     </div>
 
-    {/* Dots Indicator */}
+    {/* Dots Indicator - Responsive */}
     <div className="flex justify-center mt-8 space-x-2">
-      {[...Array(Math.ceil(testimonials.length / 3))].map((_, index) => (
+      {[...Array(Math.ceil(testimonials.length / (isMobile ? 1 : 3)))].map((_, index) => (
         <button
           key={index}
           onClick={() => setCurrentTestimonial(index)}
           className={`w-3 h-3 rounded-full transition-all duration-300 ${
-            index === (currentTestimonial % Math.ceil(testimonials.length / 3))
+            index === (currentTestimonial % Math.ceil(testimonials.length / (isMobile ? 1 : 3)))
               ? 'bg-yellow-500 scale-125' 
               : 'bg-white/50'
           }`}
@@ -405,9 +418,9 @@ export default function AboutUs() {
   <div className="max-w-7xl mx-auto">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
       {/* Left Column - Centered with proper padding */}
-      <div className="space-y-8 text-center p-6 lg:p-8 bg-[#fff4d8] rounded-2xl"> {/* Added padding and rounded corners */}
+      <div className="space-y-8 text-center p-6 lg:p-8 bg-[#fff4d8] rounded-2xl "> {/* Added padding and rounded corners */}
         {/* First Row */}
-        <div className="p-4"> {/* Added inner padding */}
+        <div className="p-4 "> {/* Added inner padding */}
           <h3 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
             10+ Years
           </h3>

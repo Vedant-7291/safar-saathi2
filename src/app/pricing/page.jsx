@@ -1,8 +1,11 @@
 // src/app/pricing/page.jsx
 'use client'
 import { Calendar, Phone } from 'lucide-react'
+import { useState } from 'react'
 
 export default function Pricing() {
+  const [hoveredVehicle, setHoveredVehicle] = useState(null)
+
   const pricingData = [
     {
       id: 1,
@@ -88,13 +91,13 @@ export default function Pricing() {
             alt="Pricing Banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0"></div>
         </div>
         
         <div className="relative z-10 h-full flex items-center justify-center pt-20">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">Pricing</h1>
-            <p className="text-xl md:text-2xl max-w-2xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 -translate-y-15">Pricing</h1>
+            <p className="text-xl md:text-2xl max-w-2xl mx-auto -translate-y-15">
               Transparent and competitive pricing for all your travel needs
             </p>
           </div>
@@ -112,11 +115,11 @@ export default function Pricing() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-yellow-500 text-black px-6 py-2 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-yellow-600 flex items-center justify-center gap-3">
+            <button className="bg-secondary-dark text-black px-5 py-2 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3">
               <Calendar className="w-5 h-5" />
               Book a Trip
             </button>
-            <button className="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-green-700 flex items-center justify-center gap-3">
+            <button className="bg-secondary-dark text-black px-5 py-2 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3">
               <Phone className="w-5 h-5" />
               View via WhatsApp
             </button>
@@ -153,15 +156,31 @@ export default function Pricing() {
                   index !== pricingData.length - 1 ? 'border-b border-gray-200' : ''
                 }`}
               >
-                {/* Vehicle Type Column - Full image with overlay text */}
-                <div className="col-span-3 border-r border-gray-200 relative group">
+                {/* Vehicle Type Column - Full image with overlay text and hover effect */}
+                <div 
+                  className="col-span-3 border-r border-gray-200 relative group cursor-pointer"
+                  onMouseEnter={() => setHoveredVehicle(vehicle.id)}
+                  onMouseLeave={() => setHoveredVehicle(null)}
+                >
                   <div className="absolute inset-0 w-full h-full">
                     <img 
                       src={vehicle.image} 
                       alt={vehicle.vehicleType}
                       className="w-full h-full object-contain md:object-cover lg:object-cover"
                     />
-                   
+                    {/* Vehicle Name Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3 text-center">
+                      <h3 className="text-lg font-bold">{vehicle.vehicleType}</h3>
+                    </div>
+                    
+                    {/* Hover Overlay with Book Now Button */}
+                    {hoveredVehicle === vehicle.id && (
+                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-all duration-300">
+                        <button className="bg-yellow-500 text-black px-5 py-2 rounded-lg font-semibold text-lg hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105">
+                          Book Now
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
 

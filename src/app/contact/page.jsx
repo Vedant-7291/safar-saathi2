@@ -35,13 +35,13 @@ export default function ContactUs() {
             alt="Contact Us Banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0"></div>
         </div>
         
         <div className="relative z-10 h-full flex items-center justify-center pt-20">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl md:text-2xl max-w-2xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 -translate-y-15">Contact Us</h1>
+            <p className="text-xl md:text-2xl max-w-2xl mx-auto -translate-y-15">
               Get in touch with us for any queries or bookings
             </p>
           </div>
@@ -126,7 +126,7 @@ export default function ContactUs() {
 
                     {/* Social Media Icons */}
                     <div className="pt-6">
-                      <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-white">Follow Us</h3>
                       <div className="flex space-x-4">
                         <a href="#" className="w-12 h-12 bg-secondary-dark hover:bg-yellow-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                           <Facebook className="w-6 h-6" />

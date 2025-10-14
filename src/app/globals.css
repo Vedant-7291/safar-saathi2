@@ -24,10 +24,22 @@
   --color-font-white: var(--color-font-white);
 }
 
-
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
 }
+
+/* Ensure all elements stay within viewport */
+* {
+  box-sizing: border-box;
+}
+
+

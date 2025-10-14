@@ -20,21 +20,21 @@ export default function WhyWeAreDifferent() {
     <section className="relative bg-white overflow-hidden">
       {/* Top Content Section */}
       <div className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           {/* Small Yellow Heading */}
-          <div className="mb-4">
-            <span className="inline-block px-4 py-2 bg-yellow-400 text-font-gray font-semibold rounded-lg">
+          <div className="mb-4 sm:mb-6">
+            <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-yellow-400 text-font-gray font-semibold rounded-lg text-sm sm:text-base">
               Why We Are Different
             </span>
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-font-gray mb-4 sm:mb-6 max-w-2xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-font-gray mb-4 sm:mb-6 max-w-2xl">
             Where Comfort Meets Memorable Journey
           </h1>
           
           {/* Paragraph */}
-          <p className="text-base sm:text-lg md:text-xl text-font-gray max-w-2xl leading-relaxed mb-8 sm:mb-12">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-font-gray max-w-2xl leading-relaxed mb-8 sm:mb-12">
             At Hum Saathi, we redefine transportation by blending luxury with reliability. 
             Every journey is crafted to provide unparalleled comfort, safety, and memories 
             that last a lifetime.
@@ -42,57 +42,57 @@ export default function WhyWeAreDifferent() {
         </div>
       </div>
 
-      {/* New Div with reduced height */}
+      {/* Main Content Section */}
       <div className="relative">
-        {/* Reduced height for top white section */}
-        <div className="h-12 sm:h-16 lg:h-20 bg-white">
+        {/* Spacer Section */}
+        <div className="h-8 sm:h-12 lg:h-16 xl:h-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 h-full items-end">
               
-              {/* Left Side - Image top section */}
+              {/* Left Side - Image spacer */}
               <div className="relative h-full lg:col-span-8 xl:col-span-9">
-                <div className="relative w-full h-8 sm:h-12 lg:h-16 bg-white rounded-t-xl overflow-hidden">
-                  <div className="absolute bottom-0 w-full h-2 sm:h-3 bg-white"></div>
+                <div className="relative w-full h-6 sm:h-8 lg:h-12 xl:h-16 bg-white rounded-t-xl overflow-hidden">
+                  <div className="absolute bottom-0 w-full h-1 sm:h-2 bg-white"></div>
                 </div>
               </div>
 
-              {/* Right Side - Stats Card top section */}
+              {/* Right Side - Stats Card spacer */}
               <div className="relative h-full flex items-end justify-end lg:col-span-4 xl:col-span-3 lg:col-start-9 xl:col-start-10">
-                <div className="w-full max-w-xs sm:max-w-sm lg:max-w-full h-8 sm:h-12 lg:h-16">
-                  {/* Removed the extra gray background that was causing overlap */}
+                <div className="w-full max-w-xs sm:max-w-sm lg:max-w-full h-6 sm:h-8 lg:h-12 xl:h-16">
+                  {/* Spacer content */}
                 </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Bottom Yellow Background with reduced height */}
-        <div className="bg-yellow-400 py-8 sm:py-12">
+        {/* Bottom Yellow Background with Content */}
+        <div className="bg-yellow-400 py-8 sm:py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-start -mt-12 sm:-mt-16 lg:-mt-20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-start -mt-8 sm:-mt-12 lg:-mt-16 xl:-mt-20">
               
-              {/* Left Side - Image with reduced height */}
+              {/* Left Side - Image */}
               <div className="relative lg:col-span-8 xl:col-span-9">
-                <div className="relative w-full -mt-4 sm:-mt-8 lg:-mt-12">
+                <div className="relative w-full -mt-2 sm:-mt-4 lg:-mt-6 xl:-mt-8">
                   <img 
                     src="/assets/home/different.png" 
                     alt="Luxury Journey Experience"
-                    className="w-full h-48 sm:h-64 lg:h-80 xl:h-96 object-cover rounded-xl shadow-2xl border-2 border-gray-200"
+                    className="w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover rounded-xl shadow-2xl border-2 border-gray-200"
                   />
                 </div>
               </div>
 
-              {/* Right Side - Stats Card with reduced height */}
+              {/* Right Side - Stats Card */}
               <div className="relative flex justify-center lg:justify-end lg:col-span-4 xl:col-span-3 lg:col-start-9 xl:col-start-10">
-                <div className="relative bg-gray-800 rounded-xl p-4 sm:p-6 shadow-2xl -mt-4 sm:-mt-8 lg:-mt-12 w-full max-w-xs sm:max-w-sm lg:max-w-full h-48 sm:h-64 lg:h-80 xl:h-96 flex items-center">
-                  <div className="space-y-4 sm:space-y-6 w-full">
+                <div className="relative bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl -mt-2 sm:-mt-4 lg:-mt-6 xl:-mt-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 flex items-center">
+                  <div className="space-y-4 sm:space-y-6 lg:space-y-8 w-full">
                     {stats.map((stat, index) => {
                       return (
                         <div key={index} className="text-center">
-                          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                             {stat.number}
                           </h3>
-                          <p className="text-gray-300 text-sm sm:text-base mt-1 sm:mt-2">
+                          <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg mt-1 sm:mt-2">
                             {stat.label}
                           </p>
                         </div>

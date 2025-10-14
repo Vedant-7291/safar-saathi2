@@ -1,3 +1,4 @@
+
 'use client'
 import { useState } from 'react'
 
@@ -74,7 +75,7 @@ export default function ContactUs() {
               {contactDetails.map((contact, index) => (
                 <div 
                   key={index}
-                  className="bg-primary-white rounded-xl p-6 shadow-lg border border-gray-200 text-center flex flex-col items-center"
+                  className="bg-primary-white rounded-xl p-6 shadow-lg border border-gray-200 text-center flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
                   {/* Contact Icon */}
                   <div className="w-12 h-12 bg-secondary-dark rounded-full flex items-center justify-center mb-4">
@@ -103,13 +104,13 @@ export default function ContactUs() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 h-full">
+          <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 h-full flex flex-col">
             <h3 className="text-2xl font-bold text-primary-white mb-6">Send us a Message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
               {/* Full Name */}
               <div>
-                <label className="block text-primary-white font-medium mb-2 text-sm">
+                <label className="block text-primary-white font-medium mb-2 text-base">
                   Full Name *
                 </label>
                 <input
@@ -118,14 +119,14 @@ export default function ContactUs() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base"
                   required
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-primary-white font-medium mb-2 text-sm">
+                <label className="block text-primary-white font-medium mb-2 text-base">
                   Email Address *
                 </label>
                 <input
@@ -134,14 +135,14 @@ export default function ContactUs() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email address"
-                  className="w-full px-4 py-3 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base"
                   required
                 />
               </div>
 
               {/* Phone Number */}
               <div>
-                <label className="block text-primary-white font-medium mb-2 text-sm">
+                <label className="block text-primary-white font-medium mb-2 text-base">
                   Phone Number *
                 </label>
                 <input
@@ -150,14 +151,14 @@ export default function ContactUs() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className="w-full px-4 py-3 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base"
                   required
                 />
               </div>
 
               {/* Question */}
-              <div>
-                <label className="block text-primary-white font-medium mb-2 text-sm">
+              <div className="flex-1">
+                <label className="block text-primary-white font-medium mb-2 text-base">
                   Ask a Question *
                 </label>
                 <textarea
@@ -166,18 +167,20 @@ export default function ContactUs() {
                   onChange={handleChange}
                   placeholder="Type your question or message here..."
                   rows="4"
-                  className="w-full px-4 py-3 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm resize-none"
+                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base resize-none flex-1"
                   required
                 />
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-secondary-dark text-black hover:bg-yellow-500 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform "
-              >
-                Submit Message
-              </button>
+              <div className="mt-auto pt-4">
+                <button
+                  type="submit"
+                  className="w-full bg-secondary-dark text-black hover:bg-yellow-500 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105"
+                >
+                  Submit Message
+                </button>
+              </div>
             </form>
           </div>
         </div>
