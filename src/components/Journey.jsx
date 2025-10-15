@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 export default function Journey() {
   const [formData, setFormData] = useState({
+    fullName: '',
     pickup: '',
     destination: '',
     date: '',
@@ -93,51 +94,65 @@ export default function Journey() {
                 Experience seamless travel planning with our easy-to-use booking system. 
                 Get the best rates for your journey with complete transparency and no hidden charges.
               </p>
-              <button className="bg-secondary-dark text-font-gray hover:bg-yellow-600 hover:text-font-gray px-5 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button className="bg-secondary-dark text-font-gray hover:bg-yellow-600 hover:text-font-gray px-5 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg cursor-pointer">
                 Book a Trip
               </button>
             </div>
           </div>
 
-          {/* Right Side - Booking Form - Extended height with more fields */}
-          <div className="bg-primary-white rounded-2xl shadow-2xl p-6 transform -translate-y-32 lg:-translate-y-40 z-50 w-full max-w-md lg:max-w-full mx-auto h-auto">
+          {/* Right Side - Booking Form - Compact height */}
+          <div className="bg-primary-white rounded-2xl shadow-2xl p-4 transform -translate-y-20 lg:-translate-y-24 z-50 w-full max-w-md lg:max-w-full mx-auto h-fit">
             <div className="h-full flex flex-col">
-              <h3 className="text-2xl font-bold text-font-gray mb-6 text-center">Book Your Ride</h3>
+              <h3 className="text-xl font-bold text-font-gray mb-4 text-center">Book Your Ride</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-4 flex-1">
+              <form onSubmit={handleSubmit} className="space-y-3">
+                {/* Full Name */}
+                <div>
+                  <label className="block text-font-gray font-medium mb-1 text-xs">Full Name *</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="Enter your full name"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                    required
+                  />
+                </div>
+
                 {/* Pickup Location */}
                 <div>
-                  <label className="block text-font-gray font-medium mb-2 text-sm">Pickup Location *</label>
+                  <label className="block text-font-gray font-medium mb-1 text-xs">Pickup Location *</label>
                   <input
                     type="text"
                     name="pickup"
                     value={formData.pickup}
                     onChange={handleChange}
                     placeholder="Enter pickup address"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                     required
                   />
                 </div>
 
                 {/* Destination */}
                 <div>
-                  <label className="block text-font-gray font-medium mb-2 text-sm">Destination *</label>
+                  <label className="block text-font-gray font-medium mb-1 text-xs">Destination *</label>
                   <input
                     type="text"
                     name="destination"
                     value={formData.destination}
                     onChange={handleChange}
                     placeholder="Enter destination address"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                     required
                   />
                 </div>
 
                 {/* Trip Type */}
                 <div>
-                  <label className="block text-font-gray font-medium mb-2 text-sm">Trip Type</label>
+                  <label className="block text-font-gray font-medium mb-1 text-xs">Trip Type</label>
                   <div className="grid grid-cols-2 gap-2">
-                    <label className="flex items-center space-x-2">
+                    <label className="flex items-center space-x-1">
                       <input
                         type="radio"
                         name="tripType"
@@ -146,9 +161,9 @@ export default function Journey() {
                         onChange={handleChange}
                         className="text-secondary-dark focus:ring-secondary-dark"
                       />
-                      <span className="text-sm">One Way</span>
+                      <span className="text-xs">One Way</span>
                     </label>
-                    <label className="flex items-center space-x-2">
+                    <label className="flex items-center space-x-1">
                       <input
                         type="radio"
                         name="tripType"
@@ -157,46 +172,46 @@ export default function Journey() {
                         onChange={handleChange}
                         className="text-secondary-dark focus:ring-secondary-dark"
                       />
-                      <span className="text-sm">Round Trip</span>
+                      <span className="text-xs">Round Trip</span>
                     </label>
                   </div>
                 </div>
 
                 {/* Date and Time */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <label className="block text-font-gray font-medium mb-2 text-sm">Date *</label>
+                    <label className="block text-font-gray font-medium mb-1 text-xs">Date *</label>
                     <input
                       type="date"
                       name="date"
                       value={formData.date}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-font-gray font-medium mb-2 text-sm">Time *</label>
+                    <label className="block text-font-gray font-medium mb-1 text-xs">Time *</label>
                     <input
                       type="time"
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                       required
                     />
                   </div>
                 </div>
 
                 {/* Vehicle Type and Passengers */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <label className="block text-font-gray font-medium mb-2 text-sm">Vehicle Type</label>
+                    <label className="block text-font-gray font-medium mb-1 text-xs">Vehicle Type</label>
                     <select
                       name="vehicleType"
                       value={formData.vehicleType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                     >
                       <option value="">Select Vehicle</option>
                       {vehicleTypes.map((type, index) => (
@@ -205,12 +220,12 @@ export default function Journey() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-font-gray font-medium mb-2 text-sm">Passengers *</label>
+                    <label className="block text-font-gray font-medium mb-1 text-xs">Passengers *</label>
                     <select
                       name="passengers"
                       value={formData.passengers}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                     >
                       {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                         <option key={num} value={num}>{num} {num === 1 ? 'Passenger' : 'Passengers'}</option>
@@ -220,39 +235,37 @@ export default function Journey() {
                 </div>
 
                 {/* Contact Information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <label className="block text-font-gray font-medium mb-2 text-sm">Phone Number *</label>
+                    <label className="block text-font-gray font-medium mb-1 text-xs">Phone Number *</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Your phone number"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-font-gray font-medium mb-2 text-sm">Email</label>
+                    <label className="block text-font-gray font-medium mb-1 text-xs">Email</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Your email address"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-sm"
                     />
                   </div>
                 </div>
 
-                
-
                 {/* Submit Button */}
-                <div className="mt-auto pt-4">
+                <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full bg-secondary-dark text-font-gray hover:bg-yellow-600 py-2 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+                    className="w-full bg-secondary-dark text-font-gray hover:bg-yellow-600 py-2 rounded-lg font-semibold text-sm transition-all duration-200 transform hover:scale-105 shadow-lg cursor-pointer"
                   >
                     Book Now
                   </button>

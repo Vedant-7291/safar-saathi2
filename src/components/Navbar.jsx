@@ -116,13 +116,13 @@ export default function Navbar() {
           {/* Banner Content */}
           <div className="relative z-10 h-full flex items-center justify-center w-full">
             <div className="text-center text-white w-full max-w-4xl px-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 drop-shadow-2xl">
-                Safar Saathi
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading mb-6 drop-shadow-2xl ">
+                Travel Partner
               </h1>
               <p className="text-2xl md:text-3xl lg:text-4xl mb-8 drop-shadow-2xl font-light">
                 Your Reliable Travel Partner
               </p>
-              <button className="bg-secondary-dark text-black px-5 py-2 rounded-lg font-semibold text-xl transition-all duration-300 transform shadow-2xl hover:shadow-3xl">
+              <button className="bg-secondary-dark text-black px-5 py-2 rounded-lg font-semibold text-xl transition-all duration-300 transform shadow-2xl hover:shadow-3xl cursor-pointer">
                 Explore Our Services
               </button>
             </div>
@@ -149,7 +149,7 @@ export default function Navbar() {
                   </span>
                 </div>
                 <span className={`font-bold text-2xl ${textClass}`}>
-                  Hum Saathi
+                  Travel Partner
                 </span>
               </Link>
             </div>
@@ -187,10 +187,10 @@ export default function Navbar() {
             <div className="lg:hidden">
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                className={`${textClass} z-60 relative p-2`}
+                className={`${textClass} z-60 relative p-2 cursor-pointer`}
                 aria-label="Toggle navigation menu"
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6 cursor-pointer" />}
               </button>
             </div>
           </div>

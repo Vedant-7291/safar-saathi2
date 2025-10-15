@@ -129,10 +129,10 @@ export default function OurVehicles() {
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`px-6 py-3 rounded-md text-sm font-semibold transition-all duration-200 ${
+                  className={`px-6 py-3 rounded-md text-sm font-semibold transition-all duration-200 cursor-pointer ${
                     activeFilter === filter
-                      ? 'bg-black text-white shadow-md'
-                      : 'text-gray-700 hover:bg-gray-200'
+                      ? 'bg-black text-white shadow-md cursor-pointer'
+                      : 'text-gray-700 hover:bg-gray-200 cursor-pointer'
                   }`}
                 >
                   {filter === 'all' ? 'All Vehicles' : filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -167,19 +167,19 @@ export default function OurVehicles() {
                 <div className="p-4">
                   <div className="flex justify-between items-center mb-4">
                     <div className="text-left">
-                      <p className="text-sm font-semibold text-gray-700">{vehicle.ratePerKm}</p>
+                      <p className="text-md font-semibold text-black">{vehicle.ratePerKm}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-bold text-yellow-600">{vehicle.price}</p>
+                      <p className="text-md font-bold text-black">{vehicle.price}</p>
                     </div>
                   </div>
 
                   {/* Action Buttons */}
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-black text-white hover:bg-gray-800 py-2 rounded-lg font-semibold transition-all duration-200 text-sm">
+                    <button className="flex-1 bg-black text-white hover:bg-gray-800 py-2 rounded-lg font-semibold transition-all duration-200 text-sm cursor-pointer">
                       Book Now
                     </button>
-                    <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-2 rounded-lg font-semibold transition-all duration-200 text-sm">
+                    <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-2 rounded-lg font-semibold transition-all duration-200 text-sm cursor-pointer">
                       Call Now
                     </button>
                   </div>

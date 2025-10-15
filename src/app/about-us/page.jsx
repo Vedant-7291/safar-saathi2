@@ -9,7 +9,8 @@ import {
   MapPin,
   Phone,
   Calendar,
-  Star
+  Star,
+  Award
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -17,20 +18,21 @@ export default function AboutUs() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const testimonialRef = useRef(null)
 
-const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
-  const checkMobile = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
-  
-  checkMobile();
-  window.addEventListener('resize', checkMobile);
-  
-  return () => window.removeEventListener('resize', checkMobile);
-}, []);
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
- const testimonials = [
+  // ... testimonials array remains the same ...
+   const testimonials = [
   {
     id: 1,
     name: "Rajesh Kumar",
@@ -170,6 +172,11 @@ useEffect(() => {
       icon: <MapPin className="w-6 h-6" />,
       title: "Pan India Service",
       description: "Operating across multiple cities with consistent quality service"
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: "Award Winning Service",
+      description: "Recognized for excellence in customer service and transportation quality"
     }
   ]
 
@@ -239,7 +246,7 @@ useEffect(() => {
         </div>
       </section>
 
-    {/* Call to Action Section with Background Image */}
+      {/* Call to Action Section with Background Image */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 min-h-[400px]">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
@@ -261,11 +268,11 @@ useEffect(() => {
               Professional service, comfortable vehicles, and memorable journeys await you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+              <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer">
                 <Calendar className="w-5 h-5" />
                 Book a Trip
               </button>
-              <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+              <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer">
                 <Phone className="w-5 h-5" />
                 View via WhatsApp
               </button>
@@ -273,190 +280,193 @@ useEffect(() => {
           </div>
         </div>
       </section>
-      {/* Why Choose Us Section - Perfect image alignment */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+
+     {/* Why Choose Us Section */}
+
+<section className="py-20 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center space-y-4 mb-16">
+      <p className="text-yellow-600 font-semibold text-lg">Why Choose Us</p>
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+        Experience The Difference
+      </h2>
+      <div className="w-20 h-1 bg-yellow-500 mx-auto"></div>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      {/* Left - Features in 2x2 Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 h-full"
+          >
+            <div className="flex-shrink-0 w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center text-white mb-4">
+              {feature.icon}
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                {feature.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Right - Three Images with proper height alignment */}
+      <div className="h-full flex flex-col justify-between space-y-4 lg:space-y-6">
+        <img 
+          src="/assets/about/1.png" 
+          alt="Modern Fleet"
+          className="w-full h-48 lg:h-52 xl:h-56 object-cover rounded-lg shadow-lg"
+        />
+        <img 
+          src="/assets/about/2.png" 
+          alt="Professional Drivers"
+          className="w-full h-48 lg:h-52 xl:h-56 object-cover rounded-lg shadow-lg"
+        />
+        <img 
+          src="/assets/about/3.png" 
+          alt="24/7 Service"
+          className="w-full h-48 lg:h-52 xl:h-56 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* Testimonials Section - Responsive (1 card on mobile, 3 cards on desktop) */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary-dark">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <p className="text-yellow-600 font-semibold text-lg">Why Choose Us</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Experience The Difference
-            </h2>
-            <div className="w-20 h-1 bg-yellow-500 mx-auto"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+            What Our Customers Say
+          </h2>
+          
+          {/* Container with responsive width */}
+          <div className="w-full overflow-hidden">
+            <div className="flex justify-center">
+              <div className="w-full max-w-[1200px] overflow-hidden">
+                <motion.div
+                  className="flex"
+                  animate={{
+                    x: `-${currentTestimonial * (isMobile ? 100 : 33.333)}%`,
+                  }}
+                  transition={{
+                    type: "tween",
+                    ease: "easeInOut",
+                    duration: 0.8,
+                  }}
+                >
+                  {/* Create enough duplicates for seamless continuous scrolling */}
+                  {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
+                    <div
+                      key={`${testimonial.id}-${index}`}
+                      className={`flex-shrink-0 ${isMobile ? 'w-full px-4' : 'w-1/3 px-3'}`}
+                    >
+                      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg h-full mx-auto max-w-md md:max-w-none">
+                        <div className="text-center">
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl md:text-2xl font-bold">
+                            {testimonial.name.charAt(0)}
+                          </div>
+                          
+                          <div className="flex justify-center mb-4">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`w-4 h-4 md:w-5 md:h-5 ${
+                                  i < testimonial.rating 
+                                    ? 'text-yellow-500 fill-current' 
+                                    : 'text-gray-300'
+                                }`}
+                              />
+                            ))}
+                          </div>
+
+                          <p className="text-gray-600 italic mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                            "{testimonial.review}"
+                          </p>
+                          
+                          <div>
+                            <h4 className="font-semibold text-gray-900 text-base md:text-lg">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-yellow-600 text-xs md:text-sm">
+                              {testimonial.designation}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Left - Features */}
-            <div className="space-y-4">
-              {features.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white mt-1">
-                    {feature.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+          {/* Dots Indicator - Responsive */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {[...Array(Math.ceil(testimonials.length / (isMobile ? 1 : 3)))].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentTestimonial(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                  index === (currentTestimonial % Math.ceil(testimonials.length / (isMobile ? 1 : 3)))
+                    ? 'bg-yellow-500 scale-125' 
+                    : 'bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section - Fixed Alignment and Padding */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+            {/* Left Column - Centered with proper padding */}
+            <div className="space-y-8 text-center p-6 lg:p-8 bg-[#fff4d8] rounded-2xl">
+              {/* First Row */}
+              <div className="p-4">
+                <h3 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                  10+ Years
+                </h3>
+                <p className="text-xl text-gray-600 font-bold">Of Excellence in Service</p>
+              </div>
+
+              {/* Second Row - Two Columns */}
+              <div className="grid grid-cols-2 gap-4 lg:gap-6 p-4">
+                <div className="text-center p-3">
+                  <h4 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">50+</h4>
+                  <p className="text-gray-600 text-lg font-bold">Cities Covered</p>
                 </div>
-              ))}
+                <div className="text-center p-3">
+                  <h4 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">657</h4>
+                  <p className="text-gray-600 text-lg font-bold">Total Cars</p>
+                </div>
+              </div>
             </div>
 
-            {/* Right - Three Images perfectly aligned with features */}
-            <div className="h-full flex flex-col justify-between space-y-4">
-              <img 
-                src="/assets/about/1.png" 
-                alt="Modern Fleet"
-                className="w-full h-40 lg:h-44 object-cover rounded-lg shadow-lg"
-              />
-              <img 
-                src="/assets/about/2.png" 
-                alt="Professional Drivers"
-                className="w-full h-40 lg:h-44 object-cover rounded-lg shadow-lg"
-              />
-              <img 
-                src="/assets/about/3.png" 
-                alt="24/7 Service"
-                className="w-full h-40 lg:h-44 object-cover rounded-lg shadow-lg"
-              />
+            {/* Right Column */}
+            <div className="bg-yellow-500 rounded-2xl p-8 flex items-center justify-center h-full min-h-[250px] lg:min-h-[280px]">
+              <div className="text-center">
+                <h3 className="text-5xl md:text-6xl font-bold text-black mb-2">
+                  10K+
+                </h3>
+                <p className="text-xl text-black font-semibold">
+                  Happy Customers
+                </p>
+                <p className="text-black/90 mt-2 text-lg">
+                  Trusted by thousands across India
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-{/* Testimonials Section - Responsive (1 card on mobile, 3 cards on desktop) */}
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary-dark">
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-      What Our Customers Say
-    </h2>
-    
-    {/* Container with responsive width */}
-    <div className="w-full overflow-hidden">
-      <div className="flex justify-center">
-        <div className="w-full max-w-[1200px] overflow-hidden">
-          <motion.div
-            className="flex"
-            animate={{
-              x: `-${currentTestimonial * (isMobile ? 100 : 33.333)}%`,
-            }}
-            transition={{
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.8,
-            }}
-          >
-            {/* Create enough duplicates for seamless continuous scrolling */}
-            {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
-              <div
-                key={`${testimonial.id}-${index}`}
-                className={`flex-shrink-0 ${isMobile ? 'w-full px-4' : 'w-1/3 px-3'}`}
-              >
-                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg h-full mx-auto max-w-md md:max-w-none">
-                  <div className="text-center">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl md:text-2xl font-bold">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                    
-                    <div className="flex justify-center mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-4 h-4 md:w-5 md:h-5 ${
-                            i < testimonial.rating 
-                              ? 'text-yellow-500 fill-current' 
-                              : 'text-gray-300'
-                          }`}
-                        />
-                      ))}
-                    </div>
-
-                    <p className="text-gray-600 italic mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
-                      "{testimonial.review}"
-                    </p>
-                    
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-base md:text-lg">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-yellow-600 text-xs md:text-sm">
-                        {testimonial.designation}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-    </div>
-
-    {/* Dots Indicator - Responsive */}
-    <div className="flex justify-center mt-8 space-x-2">
-      {[...Array(Math.ceil(testimonials.length / (isMobile ? 1 : 3)))].map((_, index) => (
-        <button
-          key={index}
-          onClick={() => setCurrentTestimonial(index)}
-          className={`w-3 h-3 rounded-full transition-all duration-300 ${
-            index === (currentTestimonial % Math.ceil(testimonials.length / (isMobile ? 1 : 3)))
-              ? 'bg-yellow-500 scale-125' 
-              : 'bg-white/50'
-          }`}
-        />
-      ))}
-    </div>
-  </div>
-</section>
-      {/* Stats Section - Adjusted spacing and centered */}
-{/* Stats Section - Fixed Alignment and Padding */}
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-  <div className="max-w-7xl mx-auto">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-      {/* Left Column - Centered with proper padding */}
-      <div className="space-y-8 text-center p-6 lg:p-8 bg-[#fff4d8] rounded-2xl "> {/* Added padding and rounded corners */}
-        {/* First Row */}
-        <div className="p-4 "> {/* Added inner padding */}
-          <h3 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            10+ Years
-          </h3>
-          <p className="text-xl text-gray-600 font-bold">Of Excellence in Service</p>
-        </div>
-
-        {/* Second Row - Two Columns */}
-        <div className="grid grid-cols-2 gap-4 lg:gap-6 p-4"> {/* Added padding */}
-          <div className="text-center p-3"> {/* Added padding */}
-            <h4 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">50+</h4>
-            <p className="text-gray-600 text-lg font-bold">Cities Covered</p>
-          </div>
-          <div className="text-center p-3"> {/* Added padding */}
-            <h4 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">657</h4>
-            <p className="text-gray-600 text-lg font-bold">Total Cars</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Right Column */}
-      <div className="bg-yellow-500 rounded-2xl p-8 flex items-center justify-center h-full min-h-[250px] lg:min-h-[280px]">
-        <div className="text-center">
-          <h3 className="text-5xl md:text-6xl font-bold text-black mb-2">
-            10K+
-          </h3>
-          <p className="text-xl text-black font-semibold">
-            Happy Customers
-          </p>
-          <p className="text-black/90 mt-2 text-lg">
-            Trusted by thousands across India
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
     </div>
   )
 }

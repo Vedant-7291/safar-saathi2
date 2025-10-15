@@ -23,7 +23,7 @@ export default function WhyWeAreDifferent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           {/* Small Yellow Heading */}
           <div className="mb-4 sm:mb-6">
-            <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-yellow-400 text-font-gray font-semibold rounded-lg text-sm sm:text-base">
+            <span className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-yellow-400 text-font-gray font-semibold rounded-full text-sm sm:text-base">
               Why We Are Different
             </span>
           </div>
@@ -84,7 +84,7 @@ export default function WhyWeAreDifferent() {
 
               {/* Right Side - Stats Card */}
               <div className="relative flex justify-center lg:justify-end lg:col-span-4 xl:col-span-3 lg:col-start-9 xl:col-start-10">
-                <div className="relative bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl -mt-2 sm:-mt-4 lg:-mt-6 xl:-mt-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 flex items-center">
+                <div className="relative bg-font-gray rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl -mt-2 sm:-mt-4 lg:-mt-6 xl:-mt-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 flex items-center">
                   <div className="space-y-4 sm:space-y-6 lg:space-y-8 w-full">
                     {stats.map((stat, index) => {
                       return (

@@ -30,8 +30,8 @@ export default function ServiceHighlights() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h3 className="text-lg font-semibold text-secondary-dark mb-2">Features</h3>
-          <div className="w-20 h-1 bg-secondary-dark mx-auto mb-4 rounded-full"></div>
+          <h3 className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-yellow-400 text-font-gray font-semibold rounded-full text-sm sm:text-base mb-3">Features</h3>
+         
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-font-gray mb-6">
             Service Highlights
           </h2>
@@ -59,10 +59,10 @@ export default function ServiceHighlights() {
 
                   {/* CTA Buttons - Responsive sizing */}
                   <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-4">
-                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-5 md:py-2 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center">
+                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-5 md:py-2 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center cursor-pointer">
                       Book a Trip
                     </button>
-                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-5 md:py-2 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center">
+                    <button className="bg-primary-white text-font-gray hover:bg-gray-100 px-4 py-2 md:px-5 md:py-2 rounded-lg font-semibold text-sm md:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center cursor-pointer">
                       Via WhatsApp
                     </button>
                   </div>

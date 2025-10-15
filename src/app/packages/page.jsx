@@ -173,12 +173,12 @@ export default function Packages() {
                     </div>
                     <button
                       onClick={() => togglePackage(pkg.id)}
-                      className="ml-2 p-1 md:p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200 flex-shrink-0"
+                      className="ml-2 p-1 md:p-2 cursor-pointer text-gray-500 hover:text-gray-700 transition-colors duration-200 flex-shrink-0"
                     >
                       {expandedPackage === pkg.id ? (
-                        <ChevronUp className="w-4 h-4 md:w-5 md:h-5" />
+                        <ChevronUp className="w-4 h-4 md:w-5 md:h-5 cursor-pointer" />
                       ) : (
-                        <ChevronDown className="w-4 h-4 md:w-5 md:h-5" />
+                        <ChevronDown className="w-4 h-4 md:w-5 md:h-5 cursor-pointer" />
                       )}
                     </button>
                   </div>
@@ -186,10 +186,10 @@ export default function Packages() {
                   {/* Price */}
                   <div className="flex justify-between items-center mb-4">
                     <div className="text-left">
-                      <p className="text-sm md:text-base font-semibold text-gray-700">Price</p>
+                      <p className="text-sm md:text-base font-semibold text-black">Price</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm md:text-base font-bold text-yellow-600">{pkg.price}</p>
+                      <p className="text-sm md:text-base font-bold text-black">{pkg.price}</p>
                     </div>
                   </div>
 
@@ -213,10 +213,10 @@ export default function Packages() {
                   {/* Action Buttons - Fixed position, no movement */}
                   <div className="mt-4">
                     <div className="flex flex-col sm:flex-row gap-2">
-                      <button className="flex-1 bg-black text-white hover:bg-gray-800 py-2 md:py-3 rounded-lg font-semibold transition-all duration-200 text-xs md:text-sm">
+                      <button className="flex-1 bg-black text-white hover:bg-gray-800 py-2 md:py-3 rounded-lg font-semibold transition-all duration-200 text-xs md:text-sm cursor-pointer">
                         Book Now
                       </button>
-                      <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-2 md:py-3 rounded-lg font-semibold transition-all duration-200 text-xs md:text-sm">
+                      <button className="flex-1 bg-yellow-500 text-black hover:bg-yellow-600 py-2 md:py-3 rounded-lg font-semibold transition-all duration-200 text-xs md:text-sm cursor-pointer">
                         Call Now
                       </button>
                     </div>

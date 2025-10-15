@@ -67,7 +67,7 @@ export default function ContactUs() {
               <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
                 {/* Left Side - Contact Information */}
                 <div className="p-8 md:p-12 lg:p-16 text-black">
-                  <div className="space-y-8">
+                  <div className="space-y-8 text-center lg:text-left">
                     {/* Heading */}
                     <div>
                       <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
@@ -81,7 +81,7 @@ export default function ContactUs() {
                     {/* Contact Details */}
                     <div className="space-y-6">
                       {/* Address */}
-                      <div className="flex items-start space-x-4">
+                      <div className="flex flex-col lg:flex-row lg:items-start items-center text-center lg:text-left space-y-4 lg:space-y-0 lg:space-x-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
                           <MapPin className="w-6 h-6 text-black" />
                         </div>
@@ -96,7 +96,7 @@ export default function ContactUs() {
                       </div>
 
                       {/* Phone */}
-                      <div className="flex items-start space-x-4">
+                      <div className="flex flex-col lg:flex-row lg:items-start items-center text-center lg:text-left space-y-4 lg:space-y-0 lg:space-x-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
                           <Phone className="w-6 h-6 text-black" />
                         </div>
@@ -110,7 +110,7 @@ export default function ContactUs() {
                       </div>
 
                       {/* Email */}
-                      <div className="flex items-start space-x-4">
+                      <div className="flex flex-col lg:flex-row lg:items-start items-center text-center lg:text-left space-y-4 lg:space-y-0 lg:space-x-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
                           <Mail className="w-6 h-6 text-black" />
                         </div>
@@ -125,9 +125,9 @@ export default function ContactUs() {
                     </div>
 
                     {/* Social Media Icons */}
-                    <div className="pt-6">
+                    <div className="pt-6 text-center lg:text-left">
                       <h3 className="text-xl font-semibold mb-4 text-white">Follow Us</h3>
-                      <div className="flex space-x-4">
+                      <div className="flex justify-center lg:justify-start space-x-4">
                         <a href="#" className="w-12 h-12 bg-secondary-dark hover:bg-yellow-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                           <Facebook className="w-6 h-6" />
                         </a>
@@ -147,7 +147,7 @@ export default function ContactUs() {
                   {/* Form Container with reduced height and proper padding */}
                   <div className="w-full max-w-md bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
-                      <div>
+                      <div className="text-center lg:text-left">
                         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Send us a Message</h3>
                         <p className="text-gray-600">We'll get back to you within 24 hours</p>
                       </div>
@@ -238,7 +238,7 @@ export default function ContactUs() {
 
                       <button
                         type="submit"
-                        className="w-full bg-black text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        className="w-full bg-black text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
                       >
                         Send Message
                       </button>

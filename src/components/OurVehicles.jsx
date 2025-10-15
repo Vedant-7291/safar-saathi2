@@ -60,10 +60,10 @@ export default function OurVehicles() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 rounded-md text-sm font-semibold transition-all duration-200 ${
+                className={`px-4 py-2 rounded-md text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   activeFilter === filter
-                    ? 'bg-secondary-dark text-primary-white shadow-md'
-                    : 'text-font-gray hover:bg-gray-200'
+                    ? 'bg-secondary-dark text-primary-white shadow-md cursor-pointer'
+                    : 'text-font-gray hover:bg-gray-200 cursor-pointer'
                 }`}
               >
                 {filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -100,16 +100,16 @@ export default function OurVehicles() {
                     <p className="text-lg font-bold text-font-gray">{vehicle.ratePerKm}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-bold text-secondary-dark">{vehicle.price}</p>
+                    <p className="text-lg font-bold text-black">{vehicle.price}</p>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <button className="flex-1 bg-secondary-dark text-black hover:bg-yellow-500 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <button className="flex-1 bg-secondary-dark text-black hover:bg-yellow-500 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 cursor-pointer">
                     Book Now
                   </button>
-                  <button className="flex-1 bg-black text-primary-white hover:bg-gray-800 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <button className="flex-1 bg-black text-primary-white hover:bg-gray-800 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 cursor-pointer">
                     Call Now
                   </button>
                 </div>

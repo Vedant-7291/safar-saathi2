@@ -17,7 +17,7 @@ export default function About() {
             
             {/* Heading */}
             <div className="text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-font-gray">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-font-gray font-heading">
                 About Us
               </h2>
             
@@ -62,7 +62,7 @@ export default function About() {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="group bg-secondary-dark text-font-gray hover:bg-yellow-500 px-4 lg:px-5 py-2 lg:py-2 rounded-lg font-semibold text-base lg:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2 lg:space-x-3">
+                  <button className="group bg-secondary-dark text-font-gray hover:bg-yellow-500 px-4 lg:px-5 py-2 lg:py-2 rounded-lg font-semibold text-base lg:text-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2 lg:space-x-3 cursor-pointer">
                     <span>View More</span>
                     <svg 
                       className="w-4 h-4 lg:w-5 lg:h-5 transform group-hover:translate-x-1 transition-transform duration-200" 

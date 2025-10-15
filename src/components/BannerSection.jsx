@@ -36,7 +36,7 @@ export default function BannerSection() {
             <p className="text-2xl md:text-3xl lg:text-4xl mb-8 drop-shadow-2xl font-light">
               Your Reliable Travel Partner
             </p>
-            <button className="bg-blue-600 text-white hover:bg-blue-700 px-10 py-4 rounded-lg font-semibold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl">
+            <button className="bg-blue-600 text-white hover:bg-blue-700 px-10 py-4 rounded-lg font-semibold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl cursor-pointer">
               Explore Our Services
             </button>
           </div>

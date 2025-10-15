@@ -57,12 +57,12 @@ export default function ContactUs() {
             {/* Header Section */}
             <div className="mb-12">
                <div className="mb-4">
-            <span className="inline-block px-4 py-2 bg-yellow-400 text-font-gray font-semibold rounded-lg">
+            <span className="inline-block px-4 py-2 bg-yellow-400 text-font-gray font-semibold rounded-full">
               Contact Us
             </span>
           </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-font-gray mb-4">
-                Get in Touch with Safar Saathi
+                Get in Touch with Travel Partner
               </h2>
               <p className="text-font-gray text-lg max-w-2xl">
                 Have questions or need assistance? We're here to help! Reach out to us through any of the following 
@@ -104,13 +104,13 @@ export default function ContactUs() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 h-full flex flex-col">
+          <div className="bg-font-gray rounded-2xl shadow-2xl p-8 h-full flex flex-col">
             <h3 className="text-2xl font-bold text-primary-white mb-6">Send us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
               {/* Full Name */}
               <div>
-                <label className="block text-primary-white font-medium mb-2 text-base">
+                <label className="block text-primary-white font-medium mb-2 text-base ">
                   Full Name *
                 </label>
                 <input
@@ -119,7 +119,7 @@ export default function ContactUs() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base"
+                  className="w-full px-4 py-4 bg-font-gray text-primary-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-600  focus:border-transparent outline-none transition-all duration-200 text-base"
                   required
                 />
               </div>
@@ -135,7 +135,7 @@ export default function ContactUs() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email address"
-                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base"
+                  className="w-full px-4 py-4 bg-font-gray text-primary-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-600  focus:border-transparent outline-none transition-all duration-200 text-base"
                   required
                 />
               </div>
@@ -151,7 +151,7 @@ export default function ContactUs() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base"
+                  className="w-full px-4 py-4 bg-font-gray text-primary-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent outline-none transition-all duration-200 text-base"
                   required
                 />
               </div>
@@ -167,7 +167,7 @@ export default function ContactUs() {
                   onChange={handleChange}
                   placeholder="Type your question or message here..."
                   rows="4"
-                  className="w-full px-4 py-4 bg-gray-700 text-primary-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-secondary-dark focus:border-transparent outline-none transition-all duration-200 text-base resize-none flex-1"
+                  className="w-full px-4 py-4 bg-font-gray text-primary-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent outline-none transition-all duration-200 text-base resize-none flex-1"
                   required
                 />
               </div>
@@ -176,7 +176,7 @@ export default function ContactUs() {
               <div className="mt-auto pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-secondary-dark text-black hover:bg-yellow-500 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105"
+                  className="w-full bg-secondary-dark text-black hover:bg-yellow-500 py-3 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
                 >
                   Submit Message
                 </button>
