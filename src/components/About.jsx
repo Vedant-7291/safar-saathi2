@@ -17,7 +17,7 @@ export default function About() {
             
             {/* Heading */}
             <div className="text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-font-gray font-heading">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl heading-font">
                 About Us
               </h2>
             

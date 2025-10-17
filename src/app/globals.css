@@ -41,12 +41,14 @@ body {
   position: relative;
 }
 
+/* Reusable heading font utility */
+.heading-font {
+  font-family: var(--font-family-heading)
+}
+
 /* Ensure all elements stay within viewport */
 * {
   box-sizing: border-box;
 }
 
 /* Heading font class */
-.font-heading {
-  font-family: 'Space Grotesk', sans-serif;
-}

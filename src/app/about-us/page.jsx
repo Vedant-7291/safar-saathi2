@@ -195,7 +195,7 @@ export default function AboutUs() {
         
         <div className="relative z-10 h-full flex items-center justify-center pt-20">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 -translate-y-14">About Us</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 -translate-y-14 heading-font">About Us</h1>
             <p className="text-xl md:text-2xl max-w-2xl mx-auto -translate-y-14">
               Your trusted travel partner with years of excellence in transportation services
             </p>
